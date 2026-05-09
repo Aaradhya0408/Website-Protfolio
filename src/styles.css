@@ -1,0 +1,332 @@
+/**
+* CSS file to hold styles that apply across the application
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Montserrat:wght@200;400;600;800&display=swap");
+
+html,
+body {
+  font-family: "Montserrat", sans-serif;
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  padding: 0;
+  width: 100%;
+}
+
+div#main {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+section {
+  position: relative;
+  width: 100vw;
+}
+
+section.min-height {
+  min-height: 100vh;
+}
+
+section.padding {
+  padding: 5rem 0;
+}
+/* Main Layout */
+.home-section {
+  background-color: #000 !important;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8%;
+}
+
+.home-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; /* Image aur Text dono left side chipke rahenge */
+  width: 100%;
+  max-width: 1300px;
+  gap: 30px; /* Text aur Image ke beech ka fixed gap kam kiya gaya hai */
+  margin-top: -3rem; /* Poore content block ko thoda upar shift karein */
+}
+
+.main-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 7rem !important; 
+  font-weight: 800;
+  line-height: 0.9;
+  background: linear-gradient(to right, #4e567e, #D2F1E4, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-left: -8rem;;
+  margin-top: -2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* 2. Fixed Intro Text */
+.fixed-intro {
+  color: white !important;
+  font-size: 2.5rem;
+  margin-top: 10px;
+  font-weight: 400;
+}
+
+.animated-role-container {
+  margin-top: 10px;
+  min-height: 50px; /* Space fix */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.animated-text {
+  color: #D2F1E4 !important; 
+  font-weight: 350;
+  font-size: 2.5rem;
+  display: inline-block;
+  min-width: 3px; /* Ensure width is not zero */
+  opacity: 1 !important;
+  margin-left: -7rem; /* Force visibility */
+}
+
+.cursor {
+  color: #4e567e;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-left: 5px;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+/* 4. Large Circular Profile Photo */
+.profile-photo {
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  object-fit: cover;
+  
+  box-shadow: 0 0 50px rgba(78, 86, 126, 0.4);
+  margin-right: 7rem;
+  margin-top: 5rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+  .home-content { flex-direction: column; text-align: center; }
+  .main-name { font-size: 4rem !important; }
+  .profile-photo { width: 300px; height: 300px; margin-top: 40px; }
+}
+
+/* About Container */
+.about-container {
+  background-color: #000;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+
+#about * {
+  opacity: 1 !important;
+  visibility: visible !important;
+  color: white; /* Default white color for all text inside about */
+}
+
+
+
+/* Paragraph visible karne ke liye */
+p.large, .large-desc, .quote-text {
+  display: block !important;
+  color: white !important;
+  font-style: italic;
+  font-size: 1.1rem;
+  opacity: 0.8;
+  padding: 2rem;
+  line-height: 1.6;
+}
+
+.skills-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 2rem auto;
+  max-width: 800px;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.skill-item {
+  color: #D2F1E4 !important; /* Halka cyan color jo black par dikhega */
+  font-size: 1.2rem;
+  text-align: left;
+  border-left: 3px solid #4e567e;
+  padding-left: 15px;
+  line-height: 1.5;
+  display: list-item !important; /* Force display */
+}
+
+/* Agar mobile screen hai toh columns ko 1 kar dein */
+@media (max-width: 700px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Hr color change */
+.gradient-hr {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #4e567e, transparent);
+  margin: 3rem 0;
+}
+h3 {
+  font-weight: 400;
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+
+.About{
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 5rem !important; 
+  font-weight: 500;
+  
+  background: linear-gradient(to right, #4e567e, #D2F1E4, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: -2rem;
+  margin-bottom: 1.5rem;
+}
+.portfolio-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  width: 95%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding-top: 3rem;
+}
+/* 1. Projects Container (Grid alignment) */
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 line mein boxes */
+  gap: 25px;
+  flex: 2;
+}
+
+/* 2. Box Styling */
+.box {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(210, 241, 228, 0.2) !important;
+  border-radius: 15px;
+  padding: 25px;
+  transition: 0.3s;
+}
+
+.box:hover {
+  border-color: #D2F1E4 !important;
+  background: rgba(210, 241, 228, 0.1) !important;
+  transform: translateY(-5px);
+}
+.box h3 {
+  color: #D2F1E4 !important;
+  font-size: 1.3rem;
+}
+
+.view-project {
+  color: #4e567e;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+/* 3. Image Side Styling (Sticky effect ke saath) */
+.image-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 100px;
+}
+
+.portfolio-image {
+ width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(78, 86, 126, 0.3);
+}
+
+/* 4. Link & Text Styling */
+.box a {
+  text-decoration: none;
+}
+
+.box h3 {
+  color: #D2F1E4;
+  margin-bottom: 10px;
+}
+
+.view-project {
+  color: #4e567e;
+  font-weight: bold;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.box:hover .view-project {
+  color: white;
+}
+
+p.small {
+  color: white;
+  opacity: 0.8;
+  margin-top: 15px;
+}
+
+nav a {
+  color: white !important;
+  font-weight: 400;
+  font-height: 1.5rem;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #D2F1E4 !important;
+}
+
+a:hover {
+  color: #4e567e;
+}
+
+.container {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 330px 300px;
+  margin: 20px auto;
+}
+
+.container .box {
+  border-radius: 10px;
+  border: 1px solid rgb(204, 204, 204);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 24px 16px;
+  text-align: center;
+}
+
+img.socialIcon {
+  height: 30px;
+  width: 30px;
+}
