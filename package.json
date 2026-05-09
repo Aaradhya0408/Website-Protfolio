@@ -3,14 +3,15 @@
   "version": "1.0.0",
   "description": "Educator JS Codespace Template",
   "source": "src/index.html",
-  "homepage": "https://github.com/microsoft/codespaces-teaching-template-js#readme",
+  "homepage": "https://Aaradhya0408.github.io/Website-Protfolio",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "parcel",
+    "build": "parcel build",
+    "build-gh": "parcel build --public-url 'https://Aaradhya0408.github.io/Website-Protfolio'",
+    "predeploy": "npm run build-gh",
+    "deploy": "gh-pages -d dist"
   },
-    "repository": {
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/microsoft/codespaces-teaching-template-js.git"
   },
