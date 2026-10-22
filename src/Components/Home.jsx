@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 // Ensure profilePic path is correct based on your project structure
-import profilePic from "../images/aaradhya.png"; 
+import profilePic from "../images/aaradhya.png";
 
 const Home = ({ name }) => {
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
   // Speed ko tez karne ke liye initial speed 100ms rakhi hai
-  const [typingSpeed, setTypingSpeed] = useState(100); 
+  const [typingSpeed, setTypingSpeed] = useState(100);
 
   const roles = [
-    "Microsoft Student Ambassador",
+    "Senior Ambassador",
+    "GIS Developer",
     "Full Stack Developer",
     "Aspiring Software Engineer",
-    "Chess Player",
-    "Web Developer at TSN Security's"
+    "Microsoft Learn Student Ambassador",
   ];
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const Home = ({ name }) => {
       );
 
       // Tez typing ke liye: Typing speed 70ms aur Deleting speed 40ms
-      setTypingSpeed(isDeleting ? 40 : 70); 
+      setTypingSpeed(isDeleting ? 40 : 70);
 
       if (!isDeleting && displayText === fullText) {
         setTimeout(() => setIsDeleting(true), 1500); // 1.5 sec pause after finishing typing
@@ -48,10 +48,9 @@ const Home = ({ name }) => {
     <section id="home" className="home-section">
       <div className="home-content">
         <div className="text-area">
-          
-          <h2 className="main-name">Hi! I am</h2> 
+          <h2 className="main-name">Hi! I am</h2>
           <h2 className="main-name">{name}</h2>
-          
+
           <div className="animated-role-container">
             <span className="animated-text">{displayText}</span>
             <span className="cursor">|</span>
